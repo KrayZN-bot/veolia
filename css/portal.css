@@ -521,3 +521,69 @@ header h2{
 
 
 }
+
+/* ================================
+   DARK MODE
+================================ */
+
+
+body.dark{
+
+    background:#0b1220;
+
+    color:white;
+
+}
+
+
+
+body.dark header{
+
+    background:#111c2e;
+
+    color:white;
+
+}
+
+
+
+body.dark .card,
+body.dark .panel{
+
+    background:#162338;
+
+    color:white;
+
+}
+
+
+
+body.dark .announcement{
+
+    background:#20314b;
+
+}
+
+
+
+body.dark .announcement p{
+
+    color:#cbd5e1;
+
+}
+
+
+
+body.dark .card h3{
+
+    color:#94a3b8;
+
+}
+
+
+
+body.dark .sidebar{
+
+    background:#08111f;
+
+}
