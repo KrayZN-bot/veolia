@@ -4,3 +4,8 @@ if (localStorage.getItem("loggedIn") !== "true") {
 
 document.getElementById("welcome").textContent =
     "Welcome, " + localStorage.getItem("user");
+
+function logout() {
+    localStorage.clear();
+    window.location.href = "index.html";
+}
