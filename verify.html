@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Two-Factor Authentication</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(rgba(12,19,33,.82),rgba(12,19,33,.82)),
+url("assets/background.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+.card{
+
+width:430px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(22px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:20px;
+
+padding:40px;
+
+color:white;
+
+box-shadow:0 25px 70px rgba(0,0,0,.45);
+
+animation:fade .5s ease;
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:12px;
+
+}
+
+p{
+
+text-align:center;
+
+color:#d2d2d2;
+
+margin-bottom:30px;
+
+line-height:1.6;
+
+}
+
+input{
+
+width:100%;
+
+padding:15px;
+
+font-size:18px;
+
+letter-spacing:6px;
+
+text-align:center;
+
+border:none;
+
+outline:none;
+
+border-radius:12px;
+
+margin-bottom:20px;
+
+background:rgba(255,255,255,.1);
+
+color:white;
+
+}
+
+button{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+background:#1888ff;
+
+font-size:16px;
+
+font-weight:600;
+
+color:white;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+button:hover{
+
+background:#0d76e5;
+
+}
+
+#error{
+
+margin-top:18px;
+
+height:20px;
+
+text-align:center;
+
+color:#ff7b7b;
+
+font-size:14px;
+
+}
+
+#timer{
+
+margin-top:22px;
+
+text-align:center;
+
+color:#b6c5d9;
+
+font-size:14px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Two-Factor Authentication</h1>
+
+<p>
+
+A verification code has been sent to your registered device.
+
+</p>
+
+<input
+id="code"
+maxlength="6"
+placeholder="000000">
+
+<button onclick="verify()">
+
+Verify Identity
+
+</button>
+
+<div id="error"></div>
+
+<div id="timer">
+
+Resend available in <span id="seconds">30</span>s
+
+</div>
+
+</div>
+
+<script>
+
+if(sessionStorage.getItem("loggedIn")!=="true"){
+location.href="index.html";
+}
+
+const correctCode="123456";
+
+function verify(){
+
+const code=document.getElementById("code").value;
+
+if(code===correctCode){
+
+window.location.href="dashboard.html";
+
+}else{
+
+document.getElementById("error").innerHTML="Incorrect verification code.";
+
+}
+
+}
+
+let time=30;
+
+const timer=setInterval(()=>{
+
+time--;
+
+document.getElementById("seconds").textContent=time;
+
+if(time<=0){
+
+clearInterval(timer);
+
+document.getElementById("timer").innerHTML='<a href="#" onclick="location.reload()" style="color:#62b4ff;text-decoration:none;">Resend Verification Code</a>';
+
+}
+
+},1000);
+
+</script>
+
+</body>
+</html>
