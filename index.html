@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Department Employee Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+        linear-gradient(rgba(18,24,36,.75),rgba(18,24,36,.75)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2000&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.login-box{
+    width:430px;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+
+.logo{
+    width:72px;
+    height:72px;
+    margin:auto;
+    border-radius:50%;
+    background:#0058b8;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    font-weight:700;
+}
+
+h1{
+    margin-top:20px;
+    text-align:center;
+    color:#202939;
+    font-size:28px;
+}
+
+.subtitle{
+    margin-top:8px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+label{
+    display:block;
+    margin-top:25px;
+    margin-bottom:8px;
+    color:#404040;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:1px solid #d6d6d6;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+    transition:.25s;
+}
+
+input:focus{
+    border-color:#0058b8;
+    box-shadow:0 0 0 3px rgba(0,88,184,.15);
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:18px;
+    font-size:14px;
+}
+
+.row a{
+    color:#0058b8;
+    text-decoration:none;
+}
+
+button{
+    width:100%;
+    margin-top:28px;
+    padding:15px;
+    background:#0058b8;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button:hover{
+    background:#00499a;
+}
+
+.footer{
+    text-align:center;
+    margin-top:30px;
+    color:#777;
+    font-size:13px;
+}
+
+.status{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:18px;
+    color:#2b8a3e;
+    font-size:14px;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#2b8a3e;
+    margin-right:8px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="login-box">
+
+<div class="logo">DP</div>
+
+<h1>Department Portal</h1>
+
+<p class="subtitle">
+Employee Authentication System
+</p>
+
+<form>
+
+<label>Username</label>
+<input type="text" placeholder="Enter username">
+
+<label>Password</label>
+<input type="password" placeholder="Enter password">
+
+<div class="row">
+<label style="margin:0;font-weight:400;">
+<input style="width:auto;margin-right:6px;" type="checkbox">
+Remember me
+</label>
+
+<a href="#">Forgot password?</a>
+</div>
+
+<button type="submit">
+Secure Sign In
+</button>
+
+</form>
+
+<div class="status">
+<div class="dot"></div>
+System Status: Operational
+</div>
+
+<div class="footer">
+© 2026 Department Employee Portal<br>
+Authorised Personnel Only
+</div>
+
+</div>
+
+</body>
+</html>
