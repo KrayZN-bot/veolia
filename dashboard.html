@@ -1,253 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Employee Dashboard</title>
+<title>Employee Portal | Dashboard</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/portal.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,sans-serif;
-}
-
-body{
-display:flex;
-background:#eef2f7;
-height:100vh;
-overflow:hidden;
-}
-
-.sidebar{
-width:250px;
-background:#13233b;
-color:white;
-padding:25px;
-}
-
-.sidebar h2{
-margin-bottom:35px;
-}
-
-.sidebar a{
-display:block;
-padding:14px;
-margin-bottom:8px;
-color:white;
-text-decoration:none;
-border-radius:10px;
-transition:.2s;
-}
-
-.sidebar a:hover{
-background:#1c3558;
-}
-
-.main{
-flex:1;
-display:flex;
-flex-direction:column;
-}
-
-.topbar{
-height:70px;
-background:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 30px;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:30px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.card h3{
-font-size:15px;
-color:#666;
-margin-bottom:10px;
-}
-
-.card h1{
-font-size:34px;
-color:#1565c0;
-}
-
-.content{
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:20px;
-padding:0 30px 30px;
-}
-
-.panel{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-button{
-padding:12px 20px;
-background:#1565c0;
-border:none;
-color:white;
-border-radius:8px;
-cursor:pointer;
-}
-
-button:hover{
-background:#0f56a5;
-}
-
-.status{
-color:#1aa14a;
-font-weight:600;
-}
-
-@media(max-width:900px){
-
-.sidebar{
-display:none;
-}
-
-.content{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
-
 </head>
+
 
 <body>
 
+
 <div class="sidebar">
 
-<h2>Employee Portal</h2>
+<div class="brand">
+<img src="assets/logo.png">
+<h2>Portal</h2>
+</div>
 
-<a href="#"><i class="fa fa-house"></i> Dashboard</a>
-<a href="#"><i class="fa fa-bullhorn"></i> Announcements</a>
-<a href="#"><i class="fa fa-users"></i> Staff Directory</a>
-<a href="#"><i class="fa fa-file"></i> Documents</a>
-<a href="#"><i class="fa fa-triangle-exclamation"></i> Incidents</a>
-<a href="#"><i class="fa fa-calendar"></i> Leave</a>
-<a href="#"><i class="fa fa-car"></i> Vehicles</a>
-<a href="#"><i class="fa fa-gear"></i> Settings</a>
+
+<a class="active" href="dashboard.html">
+<i class="fa fa-home"></i>
+Dashboard
+</a>
+
+
+<a href="pages/announcements.html">
+<i class="fa fa-bullhorn"></i>
+Announcements
+</a>
+
+
+<a href="pages/directory.html">
+<i class="fa fa-users"></i>
+Staff Directory
+</a>
+
+
+<a href="pages/documents.html">
+<i class="fa fa-folder"></i>
+Documents
+</a>
+
+
+<a href="pages/incidents.html">
+<i class="fa fa-triangle-exclamation"></i>
+Incidents
+</a>
+
+
+<a href="pages/leave.html">
+<i class="fa fa-calendar"></i>
+Leave Requests
+</a>
+
+
+<a href="pages/vehicles.html">
+<i class="fa fa-car"></i>
+Vehicles
+</a>
+
+
+<a href="pages/settings.html">
+<i class="fa fa-gear"></i>
+Settings
+</a>
+
 
 </div>
+
+
 
 <div class="main">
 
-<div class="topbar">
 
-<h2>Welcome, <span id="user"></span></h2>
+<header>
 
-<button onclick="logout()">Logout</button>
+
+<div>
+
+<h2>
+Welcome back,
+<span id="username">
+Employee
+</span>
+</h2>
+
+<p id="clock"></p>
 
 </div>
 
-<div class="cards">
+
+<div class="profile">
+
+<i class="fa fa-bell"></i>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+
+</header>
+
+
+
+
+<section class="cards">
+
 
 <div class="card">
+
+<i class="fa fa-users"></i>
+
+<div>
+
 <h3>Employees Online</h3>
+
 <h1>27</h1>
+
 </div>
 
-<div class="card">
-<h3>Open Incidents</h3>
-<h1>4</h1>
 </div>
 
+
+
 <div class="card">
-<h3>Fleet Available</h3>
+
+<i class="fa fa-car"></i>
+
+<div>
+
+<h3>Vehicles Active</h3>
+
 <h1>18</h1>
+
 </div>
+
+</div>
+
+
 
 <div class="card">
-<h3>System Status</h3>
-<h1 class="status">Online</h1>
-</div>
+
+<i class="fa fa-file"></i>
+
+<div>
+
+<h3>Documents</h3>
+
+<h1>245</h1>
 
 </div>
 
-<div class="content">
+</div>
+
+
+
+<div class="card">
+
+<i class="fa fa-server"></i>
+
+<div>
+
+<h3>System</h3>
+
+<h1 class="online">
+Online
+</h1>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="grid">
+
 
 <div class="panel">
 
-<h2>Announcements</h2>
 
-<br>
+<h2>
+Latest Announcements
+</h2>
 
-<p>• Weekly staff meeting at 18:00.</p>
 
-<p>• Fleet inspection due Friday.</p>
+<div class="announcement">
 
-<p>• New employee handbook available.</p>
+<strong>
+Fleet Inspection
+</strong>
+
+<p>
+All vehicles require inspection before deployment.
+</p>
 
 </div>
+
+
+<div class="announcement">
+
+<strong>
+Staff Meeting
+</strong>
+
+<p>
+Weekly meeting scheduled for Friday.
+</p>
+
+</div>
+
+
+</div>
+
+
+
 
 <div class="panel">
 
-<h2>Quick Actions</h2>
 
-<br>
+<h2>
+Quick Actions
+</h2>
 
-<button>New Incident</button>
 
-<br><br>
+<button onclick="location.href='pages/incidents.html'">
+Create Incident
+</button>
 
-<button>Request Leave</button>
 
-<br><br>
+<button onclick="location.href='pages/leave.html'">
+Request Leave
+</button>
 
-<button>View Documents</button>
+
+<button onclick="location.href='pages/documents.html'">
+View Documents
+</button>
+
+
 
 </div>
 
-</div>
+
+
+</section>
+
+
+
 
 </div>
 
-<script>
 
-if(sessionStorage.getItem("loggedIn")!=="true"){
-location.href="index.html";
-}
 
-document.getElementById("user").textContent=
-sessionStorage.getItem("username");
-
-function logout(){
-
-sessionStorage.clear();
-
-location.href="index.html";
-
-}
-
-</script>
+<script src="js/dashboard.js"></script>
 
 </body>
+
 </html>
