@@ -6,193 +6,516 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Employee Portal | Dashboard</title>
+<title>Employee Dashboard</title>
 
-<link rel="stylesheet" href="css/portal.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,sans-serif;
+}
+
+
+body{
+
+    background:#f1f5f9;
+
+    color:#1e293b;
+
+    padding:30px;
+
+}
+
+
+
+/* HEADER */
+
+
+.header{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+}
+
+
+
+.header h1{
+
+    font-size:30px;
+
+}
+
+
+
+.header span{
+
+    color:#1769d2;
+
+}
+
+
+.time{
+
+    color:#64748b;
+
+    margin-top:8px;
+
+}
+
+
+
+
+/* STATUS */
+
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#16a34a;
+
+    font-weight:600;
+
+}
+
+
+.dot{
+
+    width:12px;
+
+    height:12px;
+
+    background:#16a34a;
+
+    border-radius:50%;
+
+}
+
+
+
+
+
+/* CARDS */
+
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+}
+
+
+
+.card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    transition:.3s;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+.icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:16px;
+
+    background:#e8f1ff;
+
+    color:#1769d2;
+
+    font-size:25px;
+
+}
+
+
+
+.card h3{
+
+    font-size:14px;
+
+    color:#64748b;
+
+}
+
+
+.card h2{
+
+    font-size:32px;
+
+    margin-top:5px;
+
+}
+
+
+
+
+
+/* MAIN GRID */
+
+
+.content{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+
+
+.panel{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.panel h2{
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+.announcement{
+
+    background:#f8fafc;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.announcement strong{
+
+    color:#1769d2;
+
+}
+
+
+
+.announcement p{
+
+    color:#64748b;
+
+    margin-top:5px;
+
+}
+
+
+
+
+
+.item{
+
+    padding:15px 0;
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+.item:last-child{
+
+    border:none;
+
+}
+
+
+
+
+
+.green{
+
+    color:#16a34a;
+
+    font-weight:600;
+
+}
+
+
+
+.orange{
+
+    color:#ea580c;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+@media(max-width:800px){
+
+
+body{
+
+    padding:15px;
+
+}
+
+
+.header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+
+.content{
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+
+</style>
+
 </head>
+
 
 
 <body>
 
 
-<div class="sidebar">
 
-<div class="brand">
-<img src="assets/logo.png">
-<h2>Portal</h2>
-</div>
-
-
-<a class="active" href="dashboard.html">
-<i class="fa fa-home"></i>
-Dashboard
-</a>
-
-
-<a href="pages/announcements.html">
-<i class="fa fa-bullhorn"></i>
-Announcements
-</a>
-
-  <button onclick="toggleTheme()">
-<i class="fa fa-moon"></i>
-Theme
-</button>
-
-<a href="pages/directory.html">
-<i class="fa fa-users"></i>
-Staff Directory
-</a>
-
-
-<a href="pages/documents.html">
-<i class="fa fa-folder"></i>
-Documents
-</a>
-
-
-<a href="pages/incidents.html">
-<i class="fa fa-triangle-exclamation"></i>
-Incidents
-</a>
-
-
-<a href="pages/leave.html">
-<i class="fa fa-calendar"></i>
-Leave Requests
-</a>
-
-
-<a href="pages/vehicles.html">
-<i class="fa fa-car"></i>
-Vehicles
-</a>
-
-
-<a href="pages/settings.html">
-<i class="fa fa-gear"></i>
-Settings
-</a>
-
-
-</div>
-
-
-
-<div class="main">
-
-
-<header>
+<div class="header">
 
 
 <div>
 
-<h2>
-Welcome back,
-<span id="username">
-Employee
-</span>
-</h2>
+<h1>
+Welcome back, <span id="username">Employee</span>
+</h1>
 
-<p id="clock"></p>
+
+<p class="time" id="clock">
+Loading time...
+</p>
+
 
 </div>
 
 
-<div class="profile">
 
-<i class="fa fa-bell"></i>
+<div class="status">
 
-<button onclick="logout()">
-Logout
-</button>
+<div class="dot"></div>
+
+All Systems Operational
 
 </div>
 
 
-</header>
+
+</div>
 
 
 
 
-<section class="cards">
+
+
+<div class="cards">
+
 
 
 <div class="card">
+
+<div class="icon">
 
 <i class="fa fa-users"></i>
 
+</div>
+
+
 <div>
 
-<h3>Employees Online</h3>
+<h3>Staff Online</h3>
 
-<h1>27</h1>
+<h2>27</h2>
+
+</div>
+
 
 </div>
 
-</div>
+
+
 
 
 
 <div class="card">
+
+<div class="icon">
 
 <i class="fa fa-car"></i>
 
+</div>
+
+
 <div>
 
-<h3>Vehicles Active</h3>
+<h3>Active Fleet</h3>
 
-<h1>18</h1>
+<h2>18</h2>
+
+</div>
+
 
 </div>
 
-</div>
+
+
+
 
 
 
 <div class="card">
+
+<div class="icon">
 
 <i class="fa fa-file"></i>
+
+</div>
+
 
 <div>
 
 <h3>Documents</h3>
 
-<h1>245</h1>
+<h2>245</h2>
 
 </div>
 
+
 </div>
+
+
+
 
 
 
 <div class="card">
 
-<i class="fa fa-server"></i>
+<div class="icon">
+
+<i class="fa fa-clock"></i>
+
+</div>
+
 
 <div>
 
-<h3>System</h3>
+<h3>Working Time</h3>
 
-<h1 class="online">
-Online
-</h1>
-
-</div>
+<h2>06:42</h2>
 
 </div>
 
 
-</section>
+</div>
+
+
+
+
+</div>
 
 
 
 
 
-<section class="grid">
+
+
+<div class="content">
+
 
 
 <div class="panel">
@@ -203,6 +526,7 @@ Latest Announcements
 </h2>
 
 
+
 <div class="announcement">
 
 <strong>
@@ -210,26 +534,48 @@ Fleet Inspection
 </strong>
 
 <p>
-All vehicles require inspection before deployment.
+All department vehicles must complete inspection before Friday.
 </p>
 
 </div>
+
+
 
 
 <div class="announcement">
 
 <strong>
-Staff Meeting
+Staff Update
 </strong>
 
 <p>
-Weekly meeting scheduled for Friday.
+New operational procedures have been uploaded.
 </p>
 
 </div>
 
 
+
+
+<div class="announcement">
+
+<strong>
+System Maintenance
+</strong>
+
+<p>
+Portal maintenance completed successfully.
+</p>
+
 </div>
+
+
+
+
+</div>
+
+
+
 
 
 
@@ -238,23 +584,59 @@ Weekly meeting scheduled for Friday.
 
 
 <h2>
-Quick Actions
+Live Overview
 </h2>
 
 
-<button onclick="location.href='pages/incidents.html'">
-Create Incident
-</button>
+
+<div class="item">
+
+Employees Active
+
+<span class="green">
+27 Online
+</span>
+
+</div>
 
 
-<button onclick="location.href='pages/leave.html'">
-Request Leave
-</button>
 
 
-<button onclick="location.href='pages/documents.html'">
-View Documents
-</button>
+<div class="item">
+
+Open Incidents
+
+<span class="orange">
+4 Pending
+</span>
+
+</div>
+
+
+
+
+<div class="item">
+
+Vehicles Available
+
+<span class="green">
+18 Ready
+</span>
+
+</div>
+
+
+
+
+<div class="item">
+
+Portal Status
+
+<span class="green">
+Online
+</span>
+
+</div>
 
 
 
@@ -262,16 +644,49 @@ View Documents
 
 
 
-</section>
-
-
-
-
 </div>
 
 
 
-<script src="js/dashboard.js"></script>
+
+
+
+<script>
+
+
+if(sessionStorage.getItem("loggedIn")!=="true"){
+
+window.location.href="index.html";
+
+}
+
+
+
+document.getElementById("username").textContent =
+sessionStorage.getItem("username") || "Employee";
+
+
+
+
+function updateTime(){
+
+let date = new Date();
+
+document.getElementById("clock").textContent =
+date.toLocaleString("en-GB");
+
+}
+
+
+setInterval(updateTime,1000);
+
+updateTime();
+
+
+
+</script>
+
+
 
 </body>
 
